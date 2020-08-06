@@ -1,0 +1,25 @@
+@import 'variables';
+
+@mixin headingOne($color, $size, $align) {
+  font-family: $font;
+  font-weight: $bold;
+  font-size: $size;
+  text-transform: uppercase;
+  text-align: $align;
+  color: $color;
+}
+
+@mixin  paragraph($color, $align) {
+  font-family: $font;
+  font-weight: $regular;
+  font-size: 1rem;
+  color: $color;
+  text-align: $align;
+}
+
+@mixin twoColBetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

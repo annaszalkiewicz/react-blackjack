@@ -1,0 +1,24 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.header {
+  @include twoColBetween;
+  width: 100%;
+  background: $green1;
+  color: $white;
+  margin: 0;
+  padding: 1rem;
+  h1 {
+    @include headingOne ($white, $normal, $left);
+  }
+  p {
+    @include paragraph($white, $right);
+  }
+}
+@media screen and (min-width: 768px) {
+  .header {
+    h1 {
+      @include headingOne ($white, $large, $left);
+    }
+  }
+}
