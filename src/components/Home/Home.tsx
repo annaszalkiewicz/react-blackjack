@@ -1,4 +1,5 @@
 import React from 'react';
+import './Home.scss';
 
 const Home = () => {
 	return (
@@ -14,10 +15,10 @@ const Home = () => {
       <div className="welcome-form">
         <form>
           <div className="welcome-form-row">
-            <label htmlFor="name">Nickname</label>
-            <input type="text" name="name" id="name"/>
+            <input type="text" name="name" id="name" required />
+						<label htmlFor="name">Your nickname</label>
           </div>
-          <div className="welcome-form-row">
+          <div className="welcome-form-row welcome-buttons">
             <button>Play with bot</button>
 						<button>Play with other players</button>
           </div>

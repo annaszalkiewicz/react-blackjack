@@ -1,2 +1,81 @@
 @import '../../scss/variables';
+@import '../../scss/mixins';
 
+.welcome {
+  @include container(0, 550px);
+  padding: 2rem;
+}
+.welcome-heading {
+  text-align: center;
+  margin: 1rem auto;
+}
+.welcome-list {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.welcome-text {
+  text-align: center;
+  font-weight: $semiBold;
+}
+.welcome-form {
+  margin: 2rem auto;
+}
+.welcome-form-row {
+  position: relative;
+  input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: solid 2px $black;
+    padding: 1rem 1rem 0.2rem 0;
+    margin: 0 auto;
+    @include paragraph($black, left);
+    &:focus {
+      outline: none;
+      background: transparent;
+      border-bottom: solid 2px $red1;
+    }
+    &:focus + label {
+      @include smallInputText;
+    }
+    &:valid {
+      border-bottom: solid 2px $green1;
+    }
+    &:valid + label {
+      @include smallInputText;
+      color: $green1;
+    }
+  }
+  label {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    font-weight: $semiBold;
+    transition: top 0.3s linear;
+  }
+}
+.welcome-buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  button {
+    @include primaryButton;
+    margin: 0.5rem 0;
+    &:hover {
+      @include primaryButtonHover;
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .welcome-buttons {
+    flex-direction: row;
+    justify-content: center;
+    button:nth-child(1) {
+      margin: 1rem 0.5rem 1rem 0;
+    }
+    button:nth-child(2) {
+      margin: 1rem 0 1rem 0.5rem;
+    }
+  }
+}

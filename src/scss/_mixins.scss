@@ -1,25 +1,95 @@
 @import 'variables';
 
 @mixin headingOne($color, $size, $align) {
-  font-family: $font;
-  font-weight: $bold;
-  font-size: $size;
-  text-transform: uppercase;
-  text-align: $align;
-  color: $color;
+	font-family: $font;
+	font-weight: $bold;
+	font-size: $size;
+	text-transform: uppercase;
+	text-align: $align;
+	color: $color;
 }
 
-@mixin  paragraph($color, $align) {
-  font-family: $font;
-  font-weight: $regular;
-  font-size: 1rem;
-  color: $color;
-  text-align: $align;
+@mixin paragraph($color, $align) {
+	font-family: $font;
+	font-weight: $regular;
+	font-size: 1rem;
+	color: $color;
+	text-align: $align;
+}
+
+@mixin smallInputText {
+	top: 0;
+	font-size: $small;
+	font-weight: $semiBold;
 }
 
 @mixin twoColBetween {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin container($top, $width) {
+	width: 100%;
+	max-width: $width;
+	margin: $top auto;
+}
+
+@keyframes ripple {
+	0% {
+		opacity: 0.5;
+		transform: scale(0);
+	}
+	20% {
+		transform: scale(0.7);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1);
+	}
+}
+
+@mixin primaryButton {
+	position: relative;
+	background: $green5;
+	color: $white;
+	border: none;
+	border-radius: 0.2rem;
+	padding: 0.5rem 1rem;
+	font-family: $font;
+	font-size: 1rem;
+	font-weight: $medium;
+	box-shadow: $shadow;
+	transition: $transition;
+	overflow: hidden;
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 300px;
+		height: 300px;
+		transform: scale(0);
+		border-radius: 100%;
+		margin-left: -150px;
+		margin-top: -150px;
+		background: $green3;
+		opacity: 0;
+	}
+	&:focus:not(:active):after {
+		animation: ripple 1s ease-out;
+	}
+} 
+
+@mixin primaryButtonHover {
+	background: $green6;
+	box-shadow: none;
+}
+
+@mixin centerItem {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

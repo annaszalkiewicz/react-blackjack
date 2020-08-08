@@ -11,6 +11,7 @@ $green6: #09d9ac;
 $red1: #992700;
 $red2: #4d1603;
 $grey1: #eee;
+$grey2: #8c8c8c;
 $black: black;
 $white: white;
 
@@ -28,6 +29,7 @@ $semiBold: 600;
 $bold: 700;
 $extraBold: 800;
 
+$small: 0.8rem;
 $normal: 1rem;
 $large: 1.5rem;
 $extraLarge: 2rem;
@@ -39,3 +41,6 @@ $center: center;
 /**
 * MISCELLANEOUS
 */
+
+$shadow: 0 2px 2px $grey2;
+$transition: all 0.3s ease;
