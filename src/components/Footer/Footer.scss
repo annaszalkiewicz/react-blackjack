@@ -1,0 +1,26 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: $green1;
+  color: $white;
+  padding: 1rem;
+  @include twoColBetween(column);
+  text-align: center;
+  p {
+    margin: 0;
+  }
+  a {
+    @include link($white);
+  }
+}
+
+@media screen and (min-width: 768px ) {
+  .footer {
+    @include twoColBetween(row);
+  }
+}

@@ -23,9 +23,9 @@
 	font-weight: $semiBold;
 }
 
-@mixin twoColBetween {
+@mixin twoColBetween($dir) {
 	display: flex;
-	flex-direction: row;
+	flex-direction: $dir;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -92,4 +92,15 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+@mixin link($color) {
+  text-decoration: none;
+  font-style: italic;
+  color: $color;
+  transition: $transition;
+  &:hover {
+    text-decoration: underline;
+    font-weight: $semiBold;
+  }
 }

@@ -2,7 +2,7 @@
 @import '../../scss/mixins';
 
 .header {
-  @include twoColBetween;
+  @include twoColBetween(row);
   width: 100%;
   background: $green1;
   color: $white;
