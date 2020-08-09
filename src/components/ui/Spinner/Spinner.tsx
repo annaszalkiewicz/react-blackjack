@@ -19,7 +19,7 @@ const Spinner = () => {
 						r='12'
 						fill='none'
 						stroke='#000'
-						stroke-width='4'
+						strokeWidth='4'
 						opacity='.15'
 					/>
 					<circle
@@ -29,10 +29,10 @@ const Spinner = () => {
 						r='12'
 						fill='none'
 						stroke='#023328'
-						stroke-width='4'
-						stroke-dasharray='27 57'
-						stroke-linecap='square'
-						stroke-linejoin='square'
+						strokeWidth='4'
+						strokeDasharray='27 57'
+						strokeLinecap='square'
+						strokeLinejoin='inherit'
 					/>
 				</svg>
 			</span>
