@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Spinner from '../ui/Spinner/Spinner';
 
 const Game = () => {
   return (
     <div>
-      Game table
+      
+      <Spinner />
     </div>
   )
 }
 
-export default Game
+export default Game;
