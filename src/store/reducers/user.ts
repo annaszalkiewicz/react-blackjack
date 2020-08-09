@@ -1,7 +1,8 @@
 import { ActionType } from 'typesafe-actions';
+import { useSelector, TypedUseSelectorHook } from 'react-redux';
 
 import * as userActions from '../actions/user';
-import { SET_USER } from '../actions/actionsTypes';
+import { SET_USER, IS_LOGGED_IN } from '../actions/actionsTypes';
 
 export type UserAction = ActionType<typeof userActions>;
 
@@ -15,6 +16,8 @@ const initialState = {
 	isLoggedIn: false
 }
 
+export const useTypedSelector: TypedUseSelectorHook<UserState> = useSelector;
+
 const user = (state: UserState = initialState, action: UserAction) => {
 	switch (action.type) {
 		case SET_USER:
@@ -22,6 +25,12 @@ const user = (state: UserState = initialState, action: UserAction) => {
 				...state,
 				nickname: action.payload
 			};
+
+		case IS_LOGGED_IN:
+			return {
+				...state,
+				isLoggedIn: action.payload
+			}
 
 		default:
 			return state;

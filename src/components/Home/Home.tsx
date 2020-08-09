@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-import { setUser } from '../../store/actions/user';
+import { setUser, isLoggedIn } from '../../store/actions/user';
+import { isLoading } from '../../store/actions/ui';
+import { RootState } from '../../store/reducers/rootReducer';
+
 import './Home.scss';
 
 const Home = () => {
 	const [nickname, changeInput] = useState('');
+
+	const user = (state: RootState) => state.user.isLoggedIn;
+	const userIsLoggedIn = useSelector(user);
 
 	const changeInputHandler: React.ChangeEventHandler<HTMLInputElement> = (
 		e
@@ -17,7 +24,9 @@ const Home = () => {
 
 	const submitFormHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
+		dispatch(isLoading(true));
 		dispatch(setUser(nickname));
+		dispatch(isLoggedIn(true));
 	};
 
 	return (
@@ -49,6 +58,7 @@ const Home = () => {
 					</div>
 				</form>
 			</div>
+			{userIsLoggedIn && <Redirect to='/game' />}
 		</section>
 	);
 };
